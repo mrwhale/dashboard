@@ -1,7 +1,17 @@
-<% content_for :title do %>My super sweet dashboard<% end %>
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+  Dashing.gridsterLayout('[{"col":2,"row":1},{"col":1,"row":1},{"col":3,"row":1},{"col":2,"row":2},{"col":3,"row":2},{"col":1,"row":2},{"col":5,"row":1},{"col":4,"row":2},{"col":2,"row":3}]')
+  Dashing.widget_base_dimensions = [370, 340]
+  Dashing.numColumns = 5
+});
+</script>
+
+
+<% content_for :title do %>1080p dashboard<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="welcome" data-view="Clock" data-title="Clock" data-text=""></div>
     </li>
 
@@ -14,11 +24,21 @@
     </li> 
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="Temp" data-view="Number" data-title="Temperatue" data-moreinfo="Degree's Celcius" data-suffix="C"></div>
+      <div data-id="Temp1" data-view="Number" data-title="Temperatue" data-moreinfo="Degree's Celcius" data-suffix="C"></div>
+    </li>
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="Temp2" data-view="Number" data-title="Temperatue" data-moreinfo="Degree's Celcius" data-suffix="C"></div>
+    </li>
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="Temp3" data-view="Number" data-title="Temperatue" data-moreinfo="Degree's Celcius" data-suffix="C"></div>
+    </li>
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="Temp4" data-view="Number" data-title="Temperatue" data-moreinfo="Degree's Celcius" data-suffix="C"></div>
+    </li>
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="Temp5" data-view="Number" data-title="Temperatue" data-moreinfo="Degree's Celcius" data-suffix="C"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#ff9618"></div>
     </li>
   </ul>
 </div>
