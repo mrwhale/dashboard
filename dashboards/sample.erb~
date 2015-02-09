@@ -14,7 +14,7 @@
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="valuation" data-view="Number" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$"></div>
+      <div data-id="Temp" data-view="Number" data-title="Temperatue" data-moreinfo="Degree's Celcius" data-suffix="C"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
