@@ -19,9 +19,7 @@ end
 
 def time_to_str_minutes(time_obj)
   """ format: 5:38 pm """
-  te = Time.at(time_obj).in_time_zone('Australia/Melbourne')
-  #return Time.at(time_obj).strftime "%-l:%M %P"
-  return te
+  return Time.at(time_obj).strftime "%-l:%M %P"
 end
   
 def day_to_str(time_obj)
