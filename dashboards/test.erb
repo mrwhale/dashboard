@@ -1,37 +1,23 @@
 
 <% content_for :title do %>1080p dashboard<% end %>
 <script type='text/javascript'>
-$(function() {
-  $('li').live('click', function(e){
-    var widget = $(this).find('.widget');
-    var test = widget.data('device')
+function postdata(eid){
     var async = true
     var request = new XMLHttpRequest();
-    var eid = widget.data('id');
+    var option = document.getElementById(eid).getAttribute("data-device");
     console.log("eid");
     console.log(eid);
-    console.log("test");
-    console.log(test);
+
     request.open("POST","http://requestb.in/1h5i9nv1",async);
     request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 
-if( widget.data('device') == "on"){
-    console.log("test before");
-	console.log(test);
-	test = "off";
-    console.log("test after");
-	console.log(test);
-	var sendvalue = widget.data('id') + "=off";
+if( option == "on"){
+	var sendvalue = eid + "=off";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","off");
 	
 }else if( widget.data('device') == "off"){
-    console.log("test before");
-	console.log(test);
-	test = "on";
-    console.log("test after");
-	console.log(test);
-	var sendvalue = widget.data('id') + "=on";
+	var sendvalue = eid + "=on";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","on");
 	
@@ -39,9 +25,7 @@ if( widget.data('device') == "on"){
 else{
 console.log("no dice");
 }
-
-  });
-});
+}
 </script>
 <div class="gridster">
   <ul>
@@ -66,7 +50,7 @@ console.log("no dice");
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div id="kitchen" data-id="kitchen" data-view="Number" data-title="Kitchen" data-device="on"></div>
+      <div id="kitchen" data-id="kitchen" data-view="Number" data-title="Kitchen" data-device="on" onClick="postdata(this.id)"></div>
     </li>
 
   </ul>
