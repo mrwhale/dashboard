@@ -1,14 +1,11 @@
 
 <% content_for :title do %>1080p dashboard<% end %>
-<script>
-$(function bringToTop() {
+<script type='text/javascript'>
+$(function() {
   $('li').live('click', function(e){
     var widget = $(this).find('.widget');
-    if(widget.data('url')){
-      var url = widget.data('link');
-      var win = window.open(url, '_blank');
-      win.focus();
-    }
+    var url = widget.data('url');
+    window.location = url;
   });
 });
 </script>
@@ -35,7 +32,7 @@ $(function bringToTop() {
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="test" data-view="Number" data-title="TestRoom" data-device="TestRoom" data-link='http://google.com'></div>
+      <div data-id="test" data-view="Number" data-title="TestRoom" data-device="TestRoom" data-url='http://google.com'></div>
     </li>
 
   </ul>
