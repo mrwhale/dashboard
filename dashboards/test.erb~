@@ -7,6 +7,8 @@ $(function() {
     var url = widget.data('url');
     var async = true
     var request = new XMLHttpRequest();
+    var eid = widget.data('id');
+	console.log(eid);
     request.onload = function (){
 	var status = request.status;
 	var data = request.responseText;
@@ -17,13 +19,12 @@ request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 if( option == "on"){
 	var sendvalue = widget.data('id') + "=off";
 	request.send(sendvalue);
-	document.getelementbyid(widget.data('id')).setAttribute(
-"data-device","off");
+	document.getElementById(eid).setAttribute("data-device","off");
 }
 if( option == "off"){
 	var sendvalue = widget.data('id') + "=on";
 	request.send(sendvalue);
-	document.getelementbyid(widget.data('id')).setAttribute("data-device","on");
+	document.getElementById(eid).setAttribute("data-device","on");
 }
 
   });
