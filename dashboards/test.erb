@@ -17,12 +17,12 @@ request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 if( option == "on"){
 	var sendvalue = widget.data('id') + "=off";
 	request.send(sendvalue);
-	widget.data('device') = "off";
+	document.getelementbyid(widget.data('id')).data-device = "off";
 }
 if( option == "off"){
 	var sendvalue = widget.data('id') + "=on";
 	request.send(sendvalue);
-	widget.data('device') = "on";
+	document.getelementbyid(widget.data('id')).data-device = "on";
 }
 
   });
@@ -51,7 +51,7 @@ if( option == "off"){
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="kitchen" data-view="Number" data-title="Kitchen" data-device="on"></div>
+      <div id="kitchen" data-id="kitchen" data-view="Number" data-title="Kitchen" data-device="on"></div>
     </li>
 
   </ul>

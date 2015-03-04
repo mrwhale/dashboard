@@ -14,7 +14,17 @@ $(function() {
     var option = widget.data('device')
 request.open("POST","http://requestb.in/1h5i9nv1",async);
 request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-request.send(option);
+if( option == "on"){
+	var sendvalue = widget.data('id') + "=off";
+	request.send(sendvalue);
+	widget.data('device') = "off";
+}
+if( option == "off"){
+	var sendvalue = widget.data('id') + "=on";
+	request.send(sendvalue);
+	widget.data('device') = "on";
+}
+
   });
 });
 </script>
@@ -41,7 +51,7 @@ request.send(option);
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="hallway" data-view="Number" data-title="hallway" data-device="on"></div>
+      <div data-id="kitchen" data-view="Number" data-title="Kitchen" data-device="on"></div>
     </li>
 
   </ul>
