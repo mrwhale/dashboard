@@ -2,27 +2,31 @@
 <% content_for :title do %>1080p dashboard<% end %>
 <script type='text/javascript'>
 $(function() {
+	var test = widget.data('device')
   $('li').live('click', function(e){
     var widget = $(this).find('.widget');
-    var url = widget.data('url');
     var async = true
     var request = new XMLHttpRequest();
     var eid = widget.data('id');
-	console.log(eid);
-    request.onload = function (){
-	var status = request.status;
-	var data = request.responseText;
-    }
-console.log(widget.data('device'));
-request.open("POST","http://requestb.in/1h5i9nv1",async);
-request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+    console.log(eid);
+ 
+    console.log(widget.data('device'));
+    request.open("POST","http://requestb.in/1h5i9nv1",async);
+    request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+
 if( widget.data('device') == "on"){
+	console.log(test);
+	test = "off";
+	console.log(test);
 	var sendvalue = widget.data('id') + "=off";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","off");
 	
 }
 if( widget.data('device') == "off"){
+	console.log(test);
+	test = "on";
+	console.log(test);
 	var sendvalue = widget.data('id') + "=on";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","on");
