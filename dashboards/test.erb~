@@ -11,9 +11,10 @@ $(function() {
 	var status = request.status;
 	var data = request.responseText;
     }
+    var option = widget.data('device')
 request.open("POST","http://requestb.in/1h5i9nv1",async);
 request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-request.send("test=test1");
+request.send(option);
   });
 });
 </script>
@@ -40,7 +41,7 @@ request.send("test=test1");
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="test" data-view="Number" data-title="TestRoom" data-device="TestRoom" data-url='http://google.com'></div>
+      <div data-id="hallway" data-view="Number" data-title="hallway" data-device="on"></div>
     </li>
 
   </ul>
