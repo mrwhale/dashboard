@@ -17,12 +17,13 @@ request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 if( option == "on"){
 	var sendvalue = widget.data('id') + "=off";
 	request.send(sendvalue);
-	document.getelementbyid(widget.data('id')).data-device = "off";
+	document.getelementbyid(widget.data('id')).setAttribute(
+"data-device","off");
 }
 if( option == "off"){
 	var sendvalue = widget.data('id') + "=on";
 	request.send(sendvalue);
-	document.getelementbyid(widget.data('id')).data-device = "on";
+	document.getelementbyid(widget.data('id')).setAttribute("data-device","on");
 }
 
   });
