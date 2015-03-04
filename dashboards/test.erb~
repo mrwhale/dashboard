@@ -22,5 +22,9 @@
       <div data-id="temp2" data-view="Number" data-title="Study Temperature" data-moreinfo="Since 8am" data-suffix="C"></div>
     </li>
 
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="test" data-view="Stswitch" data-title="TestRoom" data-device="TestRoom"></div>
+    </li>
+
   </ul>
 </div>
