@@ -12,7 +12,6 @@ $(function() {
     console.log(eid);
     console.log("test");
     console.log(test);
-    console.log(widget.data('device'));
     request.open("POST","http://requestb.in/1h5i9nv1",async);
     request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 
@@ -26,8 +25,7 @@ if( widget.data('device') == "on"){
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","off");
 	
-}
-if( widget.data('device') == "off"){
+}else if( widget.data('device') == "off"){
     console.log("test before");
 	console.log(test);
 	test = "on";
@@ -37,6 +35,9 @@ if( widget.data('device') == "off"){
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","on");
 	
+}
+else{
+console.log("no dice");
 }
 
   });
