@@ -13,20 +13,17 @@ $(function() {
 	var status = request.status;
 	var data = request.responseText;
     }
-    var option = widget.data('device')
-console.log(option);
+console.log(widget.data('device'));
 request.open("POST","http://requestb.in/1h5i9nv1",async);
 request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-if( option == "on"){
+if( widget.data('device') == "on"){
 	var sendvalue = widget.data('id') + "=off";
-	option = "off";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","off");
 	
 }
-if( option == "off"){
+if( widget.data('device') == "off"){
 	var sendvalue = widget.data('id') + "=on";
-	option = "on";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","on");
 	

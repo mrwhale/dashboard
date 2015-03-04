@@ -19,15 +19,17 @@ request.open("POST","http://requestb.in/1h5i9nv1",async);
 request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 if( option == "on"){
 	var sendvalue = widget.data('id') + "=off";
+	option = "off";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","off");
-	var option = "off";
+	
 }
 if( option == "off"){
 	var sendvalue = widget.data('id') + "=on";
+	option = "on";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","on");
-	var option = "on";
+	
 }
 
   });
