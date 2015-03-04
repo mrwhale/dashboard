@@ -5,7 +5,7 @@ $(function() {
   $('li').live('click', function(e){
     var widget = $(this).find('.widget');
     var url = widget.data('url');
-    window.location = url;
+    $.post("http://requestb.in/1h5i9nv1",{flux:pav})
   });
 });
 </script>
