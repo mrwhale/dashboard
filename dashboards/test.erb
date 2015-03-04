@@ -2,9 +2,9 @@
 <% content_for :title do %>1080p dashboard<% end %>
 <script type='text/javascript'>
 $(function() {
-	var test = widget.data('device')
   $('li').live('click', function(e){
     var widget = $(this).find('.widget');
+    var eid = widget.data('device')
     var async = true
     var request = new XMLHttpRequest();
     var eid = widget.data('id');
@@ -15,18 +15,18 @@ $(function() {
     request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 
 if( widget.data('device') == "on"){
-	console.log(test);
-	test = "off";
-	console.log(test);
+	console.log(eid);
+	eid = "off";
+	console.log(eid);
 	var sendvalue = widget.data('id') + "=off";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","off");
 	
 }
 if( widget.data('device') == "off"){
-	console.log(test);
-	test = "on";
-	console.log(test);
+	console.log(eid);
+	eid = "on";
+	console.log(eid);
 	var sendvalue = widget.data('id') + "=on";
 	request.send(sendvalue);
 	document.getElementById(eid).setAttribute("data-device","on");
