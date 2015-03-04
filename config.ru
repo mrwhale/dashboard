@@ -2,6 +2,7 @@ require 'dashing'
 
 configure do
   set :auth_token, 'myauthtokenisawesome'
+  set :protection, :except => :frame_options
 
   helpers do
     def protected!
